@@ -76,7 +76,7 @@ Download ExpoGo from the play store. Scan the barcode that is generated once you
 
 4 OIS Steps
 
-Open your camera applicaiton and scan the barcode that is generated once you have run the proir step.
+Open your camera application and scan the barcode that is generated once you have run the proir step.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
