@@ -43,6 +43,41 @@ In order to run this project you will need to install Elixir, TypeScript, and Po
 git clone git@github.com:sethpthomas91/android-tic-tac-toe.git
    ```
 
+2 Navigate to the new directory
+   ```sh
+cd android-tic-tac-toe/
+   ```
+
+3 Install the dependencies
+   ```sh
+npm install
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Running the application
+
+1 Navigate to the project directory. It should have the app.json file in it.
+   ```sh
+cd android-tic-tac-toe/
+   ```
+
+2 Start the application
+   ```sh
+npm start
+   ```
+
+   Your terminal should look like this:
+   ![Starting the application](readme_images/start.png)
+
+3 ANDROID Steps
+
+Download ExpoGo from the play store. Scan the barcode that is generated once you have run the prior step.
+
+4 OIS Steps
+
+Open your camera applicaiton and scan the barcode that is generated once you have run the proir step.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Testing
