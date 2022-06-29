@@ -17,4 +17,4 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Run Expo Tests
-        run: npm test
+        run: npm run test-github

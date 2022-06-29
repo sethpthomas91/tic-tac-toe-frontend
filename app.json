@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "tic-tac-toe-frontend",
+    "owner":"sthomasdev",
     "slug": "tic-tac-toe-frontend",
     "version": "1.0.0",
     "orientation": "portrait",
