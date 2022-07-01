@@ -3,37 +3,9 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-      title="Press to configure a new game"
-      onPress={() => navigation.navigate('Config')}
-      />
-    </View>
-  );
-}
-
-function ConfigScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Config Screen</Text>
-      <Button
-      title="Continue to game"
-      onPress={() => navigation.navigate('Game')}
-      />
-    </View>
-  );
-}
-
-function GameScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Game Screen</Text>
-    </View>
-  );
-}
+import HomeScreen from './screens/HomeScreen';
+import ConfigScreen from './screens/ConfigScreen';
+import GameScreen from './screens/GameScreen';
 
 const Stack = createNativeStackNavigator();
 
