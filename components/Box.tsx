@@ -1,18 +1,12 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Text, View } from './Themed';
-import { useState } from 'react';
 
-export default function Box({ path }: { path: string }) {
-  const [symbol, setSymbol] = useState('X')
-
+export default function Box({ symbol }: { symbol: string }) {
+  
   function handleBoxPress() {
-    if (symbol === 'X') {
-      setSymbol('O');
-    } else {
-      setSymbol('X');
-    }
-    return
+    alert(`You pressed box ${symbol}`);
+    return;
   }
 
   return (
@@ -31,24 +25,13 @@ export default function Box({ path }: { path: string }) {
 const styles = StyleSheet.create({
   getStartedContainer: {
     alignItems: 'center',
-    marginHorizontal: 50,
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightContainer: {
-    borderRadius: 3,
-    paddingHorizontal: 4,
+    marginHorizontal: 2,
+    marginVertical: 2
   },
   getStartedText: {
     fontSize: 17,
     lineHeight: 24,
     color: 'white'
-  },
-  helpContainer: {
-    marginTop: 15,
-    marginHorizontal: 20,
-    alignItems: 'center',
   },
   box: {
     display: 'flex',

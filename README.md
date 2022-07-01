@@ -10,7 +10,7 @@ A tic-tac-toe application that uses expo, type script, react native for the fron
 <!-- BUILD STATUS -->
 ## Current Build Status
 
-Add test badges here.
+[![Frontend Tests](https://github.com/sethpthomas91/tic-tac-toe-frontend/actions/workflows/main.yml/badge.svg)](https://github.com/sethpthomas91/tic-tac-toe-frontend/actions/workflows/main.yml)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

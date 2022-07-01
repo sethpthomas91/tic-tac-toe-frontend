@@ -3,25 +3,33 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Text, View } from './Themed';
 import { useState } from 'react';
 
-export default function Board({ path }: { path: string }) {
-  const [symbol, setSymbol] = useState('X')
+import getGame from "/Users/sthomas/Learning/Mobile/tic-tac-toe-frontend/http_handlers/tic_tac_toe_backend_calls"
+import Box from './Box';
 
-  function handleBoxPress() {
-    if (symbol === 'X') {
-      setSymbol('O');
-    } else {
-      setSymbol('X');
+export default function Board() {
+  const [game, setGame] = useState(null)
+
+  async function handlePress() {
+    let game = await getGame()
+    setGame(game);
+    return;
+  }
+
+  function generateBoxes(boardObject: any) {
+    let array = []
+    for( let i = 1; i < 10; i++) {
+      array.push(<Box key={i} symbol={`${boardObject[i]}`}></Box>)
     }
-    return
+    return array
   }
 
   return (
     <View>
       <View style={styles.getStartedContainer}>
-        <TouchableOpacity onPress={handleBoxPress} style={styles.box}>
-            <Text style={styles.getStartedText}>
-                {symbol}
-            </Text>
+        <TouchableOpacity onPress={handlePress} style={styles.box}>
+        {
+          game ? generateBoxes(game.board) : <Box symbol={"No game"}></Box>
+        }
         </TouchableOpacity>
       </View>
     </View>
@@ -33,29 +41,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 50,
   },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightContainer: {
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  getStartedText: {
-    fontSize: 17,
-    lineHeight: 24,
-    color: 'white'
-  },
-  helpContainer: {
-    marginTop: 15,
-    marginHorizontal: 20,
-    alignItems: 'center',
-  },
   box: {
     display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#000000',
-    height: 80,
-    width: 80,
+    alignContent: 'center',
+    backgroundColor: '#808080',
+    height: 300,
+    width: 300,
   }
 });
