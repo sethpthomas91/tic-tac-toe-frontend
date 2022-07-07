@@ -1,11 +1,24 @@
 import * as React from "react";
 import { Button, StyleSheet, Text, View } from 'react-native';
+import { createGame } from "../http_handlers/tic_tac_toe_backend_calls";
 
 
-export default function GameScreen({ navigation }) {
+export default function ConfigScreen({ navigation }) {
+  async function handlePress() {
+    let newGame = await createGame();
+    navigation.navigate('Game', {
+      gameID: newGame.id
+    });
+    return newGame;
+  }
+
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Game Screen</Text>
+      <Text>Config Screen</Text>
+      <Button
+      title="Create new game"
+      onPress={() => handlePress()}
+      />
     </View>
   );
 }

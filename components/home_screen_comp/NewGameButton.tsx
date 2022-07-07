@@ -1,12 +1,18 @@
 import { StyleSheet , TouchableOpacity } from 'react-native';
 
 import { Text } from '../themes/Themed';
+import { useNavigation } from '@react-navigation/native';
 
 export default function NewGameButton() {
 
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}> Play new game </Text>
+    <TouchableOpacity 
+    style={styles.button}
+    onPress={() => navigation.navigate('Config')}
+    >
+      <Text style={styles.buttonText}> Press to configure a new game</Text>
     </TouchableOpacity>
   );
 }

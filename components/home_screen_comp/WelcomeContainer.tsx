@@ -1,9 +1,8 @@
 import { StyleSheet } from 'react-native';
 import NewGameButton from './NewGameButton';
-
 import { Text, View } from '../themes/Themed';
 
-export default function WelcomeContainer() {
+export default function WelcomeContainer({ navigation }) {
 
   return (
     <View style={styles.welcomeContainer}>
@@ -20,8 +19,6 @@ const styles = StyleSheet.create({
       height: '30%',
       alignItems: 'center',
       justifyContent: 'center',
-      borderWidth: 3,
-      backgroundColor: 'green',
     },
     separator: {
         marginVertical: 30,
