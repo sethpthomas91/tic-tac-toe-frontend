@@ -5,6 +5,7 @@ import { Text, View } from '../themes/Themed';
 type CellProps = {
     symbol: string,
     id: number,
+    testID?: string,
     getPlayerMove: (id: number) => null
 }
 
@@ -16,25 +17,25 @@ export default function Cell(props: CellProps) {
   }
 
   return (
-    <View>
-      <View style={styles.getStartedContainer}>
+      <View style={styles.cellContainer}>
         <TouchableOpacity onPress={handleBoxPress} style={styles.box} testID="cellPresser">
-          <Text style={styles.getStartedText}>
+          <Text style={styles.cellText}>
             {symbol}
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
     );
 }
 
 const styles = StyleSheet.create({
-    getStartedContainer: {
+  cellContainer: {
       alignItems: 'center',
       marginHorizontal: 2,
-      marginVertical: 2
+      marginVertical: 2,
+      borderColor: 'white',
+      borderWidth: 3
     },
-    getStartedText: {
+    cellText: {
       fontSize: 17,
       lineHeight: 24,
       color: 'white'

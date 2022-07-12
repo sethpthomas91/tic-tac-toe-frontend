@@ -11,7 +11,7 @@ export default function GameScreen({ route }) {
   const [game, setGame] = useState();
   const [userMove, setUserMove] = useState();
 
-  async function getPlayerMove(playerMove) {
+  async function getPlayerMove(playerMove: number) {
     let response = await updateGame(gameID, playerMove);
     setUserMove(playerMove);
     return response;
@@ -34,6 +34,9 @@ export default function GameScreen({ route }) {
         <View>
         <Text>{`Game: ${game.id}`}</Text>
         <Text>{`Current player: ${game.current_player}`}</Text>
+        <Text>{`Game won: ${game.won}`}</Text>
+        <Text>{`Game tied: ${game.tied}`}</Text>
+        <Text>{`Winning player: ${game.winner === 0 ? "None" : game.winner}`}</Text>
         <Board board={game.board} getPlayerMove={getPlayerMove}> </Board>
         </View>
       }

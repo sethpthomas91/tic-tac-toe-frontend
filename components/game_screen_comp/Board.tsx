@@ -20,22 +20,20 @@ type BoardProps = {
 export default function Board(props: BoardProps) {
     const { board, getPlayerMove } = props;
     
-    function generateBoxes(boardObject: any) {
-      let array = [];
-      for( let i = 1; i < 10; i++) {
-        array.push(<Cell key={i} id={i} symbol={`${boardObject[i.toString()]}`} getPlayerMove={getPlayerMove}></Cell>)
-      };
-      return array;
-    }
-  
     return (
-      <View>
         <View style={styles.getStartedContainer}>
-          <View style={styles.box}>
-          { generateBoxes(board) }
+          <View style={styles.gridContainer}>
+          { Object.values(board).map((cell, index) => {
+            return <Cell 
+              key={index + 1} 
+              id={index + 1} 
+              testID={`cell_${index + 1}`}
+              symbol={cell}  
+              getPlayerMove={getPlayerMove}
+            />
+          })}
           </View>
         </View>
-      </View>
     );
 }
 
@@ -44,7 +42,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       marginHorizontal: 50,
     },
-    box: {
+    gridContainer: {
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'wrap',
