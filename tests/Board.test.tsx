@@ -1,6 +1,3 @@
-// pass in board that has an X at 1
-// count children, should be 9
-// test the first child for X
 import React from "react";
 import { View } from '../components/themes/Themed';
 import Board from "../components/game_screen_comp/Board";

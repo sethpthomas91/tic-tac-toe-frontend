@@ -12,7 +12,7 @@ export default function NewGameButton() {
     style={styles.button}
     onPress={() => navigation.navigate('Config')}
     >
-      <Text style={styles.buttonText}> Press to configure a new game</Text>
+      <Text style={styles.buttonText}> Configure a new game</Text>
     </TouchableOpacity>
   );
 }

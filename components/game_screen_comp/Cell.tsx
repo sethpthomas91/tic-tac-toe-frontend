@@ -12,13 +12,13 @@ type CellProps = {
 export default function Cell(props: CellProps) {
   const {symbol, id, getPlayerMove} = props;
 
-  const handleBoxPress = () => {
+  const handlePress = () => {
     getPlayerMove(id);
   }
 
   return (
       <View style={styles.cellContainer}>
-        <TouchableOpacity onPress={handleBoxPress} style={styles.box} testID="cellPresser">
+        <TouchableOpacity onPress={handlePress} style={styles.box} testID="cellPresser">
           <Text style={styles.cellText}>
             {symbol}
           </Text>

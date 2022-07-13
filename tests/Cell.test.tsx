@@ -13,8 +13,8 @@ const CellWrapper = () => {
   </View>
 }
 
-test('a cell calls getPlayerByID when pressed', () => {
-  const { getByText, getByTestId, toJSON } = render(<CellWrapper />);
+test('a cell calls getPlayerMove when pressed', () => {
+  const { getByTestId } = render(<CellWrapper />);
 
   const pressable = getByTestId('cellPresser');
 
@@ -22,12 +22,3 @@ test('a cell calls getPlayerByID when pressed', () => {
   const wrapper = getByTestId('cellWrapper');
   expect(wrapper.children[0]).toBe('UPDATED');
 })
-
-
-// const BasicComponent = ({value}) => <View testID={'view'}>{value}</View>;
-
-// test('BasicComponent shows value', () => {
-//   const { getByText, getByTestId, toJSON } = render(<BasicComponent value={"Anything"} />);
-//   const view = getByTestId('view');
-//   expect(view.children[0]).toMatchSnapshot()
-// })
