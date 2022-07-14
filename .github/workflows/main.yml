@@ -1,0 +1,20 @@
+name: Frontend Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v2
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Expo Tests
+        run: npm test
